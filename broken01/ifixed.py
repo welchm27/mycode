@@ -10,12 +10,12 @@ def main():
     while (calc1 != "q"):
         print("What is the first operator? Or, enter q to quit: ")
         calc1 = input()
-        if calc1 == "Q":
+        if calc1 == "Q" or "q":
             break
         calc1 = float(calc1)
         print("What is the second operator? Or, enter q to quit: ")
         calc2 = input()
-        if calc2 == "q":
+        if calc2 == "Q" or "q":
             break
         calc2 = float(calc2)
         print("Enter an operation to perform on the two operators (+ or -): ")
