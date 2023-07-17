@@ -7,7 +7,7 @@ def main():
     # define the name of our xls file
     excel_file = 'movies.xls'
 
-    # create a DataFrame (DF) object, EASY!
+    # create a DataFrame (DF) object. EASY!
     # because we did not specify a sheet
     # only the first sheet was read into the DF
     movies = pd.read_excel(excel_file)
@@ -28,10 +28,11 @@ def main():
     movies_sheet1.head(5).to_excel("5movies.xlsx")
 
     # export 5 movies from the top of the dataframe to json
-    movies_sheet1.head(5).to_excel("5movies.json")
+    movies_sheet1.head(5).to_json("5movies.json")
 
-    # export 5 movies from the top of the dataframe to cvs
+    # export 5 movies from the top of the dataframe to csv
     movies_sheet1.head(5).to_csv("5movies.csv")
+
 
 if __name__ == "__main__":
     main()
