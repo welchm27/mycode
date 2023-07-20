@@ -44,10 +44,8 @@ def index():
     # if the key "username" has a value in session
     if "username" in session:
         username = session["username"]
-        monsterdata = jsonify(MonsterData)
-
         return "Logged in as " + username + "<br>" \
-                "<p>" + monsterdata + "</p>"\
+                "<p>" + jsonify(MonsterData) + "</p>"\
                 "<b><a href = '/logout'> Click here to log out </a></b>"
     
     ## if the key "username" does not have a value in session
