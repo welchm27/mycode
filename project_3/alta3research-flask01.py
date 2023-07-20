@@ -22,7 +22,6 @@ reads from/writes to a sqlite3 database"""
 app = Flask(__name__)
 app.secret_key = "any random string"
 
-# Monster Data 
 MonsterData = {
     "name": "Drow",
     "meta": "Medium humanoid, neutral evil",
@@ -35,12 +34,13 @@ MonsterData = {
     "WIS": "11",
     "CHA": "12", 
     "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg"
-  }
-
+}
 
 # if the user hits the root of our API
 @app.route('/')
 def index():
+    # Monster Data 
+
     # if the key "username" has a value in session
     if "username" in session:
         username = session["username"]
@@ -49,12 +49,11 @@ def index():
         return "Logged in as " + username + "<br>" \
                 "<p>" + monsterdata + "</p>"\
                 "<b><a href = '/logout'> Click here to log out </a></b>"
-
-
+    
     ## if the key "username" does not have a value in session
     return "You are not logged in <br><a href = '/login'></b>" + \
             "Click here to log in </b></a>"
-
+@app.route("/login", methods = ["GET", "POST"])
 def login():
     ## if you sent us a POST because you clicked the login button
     if request.method == "POST":
