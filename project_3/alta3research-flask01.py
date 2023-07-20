@@ -22,6 +22,7 @@ reads from/writes to a sqlite3 database"""
 app = Flask(__name__)
 app.secret_key = "any random string"
 
+# Monster Data 
 MonsterData = {
     "name": "Drow",
     "meta": "Medium humanoid, neutral evil",
@@ -39,7 +40,6 @@ MonsterData = {
 # if the user hits the root of our API
 @app.route('/')
 def index():
-    # Monster Data 
 
     # if the key "username" has a value in session
     if "username" in session:

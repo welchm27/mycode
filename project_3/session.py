@@ -11,6 +11,22 @@ from flask import request
 app = Flask(__name__)
 app.secret_key = "any random string"
 
+MonsterData = {
+    "name": "Drow",
+    "meta": "Medium humanoid, neutral evil",
+    "Armor Class": "15 (Chain Shirt)",
+    "Hit Points": "13 (3d8)",
+    "STR": "10",
+    "DEX": "14",
+    "CON": "10",
+    "INT": "11",
+    "WIS": "11",
+    "CHA": "12", 
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg"
+}
+
+monsterdata= jsonify(MonsterData)
+
 ## If the user hits the root of our API
 @app.route("/")
 def index():
