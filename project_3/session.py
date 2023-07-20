@@ -7,6 +7,7 @@ from flask import redirect
 from flask import url_for
 from flask import escape
 from flask import request
+from flask import jsonify
 
 app = Flask(__name__)
 app.secret_key = "any random string"
