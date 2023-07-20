@@ -12,8 +12,8 @@ URL= "http://127.0.0.1:2224/"
 resp= requests.get(URL).json()
 
 name = resp["name"]
-#ac = resp[0]["Armor Class"]
-#hp = resp[0]["Hit Points"]
+ac = resp[0]["Armor Class"]
+hp = resp[0]["Hit Points"]
 
 #print(f"""Name: {name}
 #Armor Class: {ac}
