@@ -8,6 +8,7 @@ from flask import escape
 from flask import request
 from flask import redirect
 from flask import jsonify
+from flask import render_template
 
 
 #TODO: create at least two endpoints
@@ -19,6 +20,7 @@ writes to/reads from a cookie
 reads from/writes to a sqlite3 database"""
 
 app = Flask(__name__)
+app.secret_key = "any random string"
 
 # Monster Data 
 MonsterData = {
@@ -42,9 +44,10 @@ def index():
     # if the key "username" has a value in session
     if "username" in session:
         username = session["username"]
-#        monsterdata = jsonify(MonsterData)
+        monsterdata = jsonify(MonsterData)
 
         return "Logged in as " + username + "<br>" \
+                "<p>" + monsterdata + "</p>"\
                 "<b><a href = '/logout'> Click here to log out </a></b>"
 
 
