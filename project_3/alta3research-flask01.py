@@ -20,7 +20,7 @@ writes to/reads from a cookie
 reads from/writes to a sqlite3 database"""
 
 app = Flask(__name__)
-app.secret_key = "any random string"
+
 
 # Monster Data 
 MonsterData = {
@@ -41,7 +41,7 @@ MonsterData = {
 @app.route('/')
 def index():
     # returning MonsterData as JSON
-    return jsonify(MonsterData[0])
+    return jsonify(MonsterData)
 
 
 if __name__ == "__main__":
